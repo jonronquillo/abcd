@@ -1,0 +1,269 @@
+Please specify --site sitename
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 109, in <module>
+    main()
+  File "/home/jon/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 18, in main
+    click.Group(commands=commands)(prog_name="bench")
+  File "/home/jon/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 829, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/jon/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/home/jon/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1259, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/jon/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1259, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/jon/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/jon/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "/home/jon/frappe-bench/env/lib/python3.10/site-packages/click/decorators.py", line 21, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/commands/__init__.py", line 29, in _func
+    ret = f(frappe._dict(ctx.obj), *args, **kwargs)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/commands/site.py", line 685, in backup
+    odb = scheduled_backup(
+  File "/home/jon/frappe-bench/apps/frappe/frappe/utils/backups.py", line 529, in scheduled_backup
+    odb = new_backup(
+  File "/home/jon/frappe-bench/apps/frappe/frappe/utils/backups.py", line 581, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/utils/backups.py", line 187, in get_backup
+    self.set_backup_file_name()
+  File "/home/jon/frappe-bench/apps/frappe/frappe/utils/backups.py", line 207, in set_backup_file_name
+    enc = "-enc" if frappe.get_system_settings("encrypt_backup") else ""
+  File "/home/jon/frappe-bench/apps/frappe/frappe/__init__.py", line 2293, in get_system_settings
+    local.system_settings = db.get_singles_dict("System Settings", cast=True)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/database/database.py", line 665, in get_singles_dict
+    queried_result = frappe.qb.engine.get_query(
+  File "/home/jon/frappe-bench/apps/frappe/frappe/database/query.py", line 513, in get_query
+    criterion = self.build_conditions(table, filters, **kwargs)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/database/query.py", line 369, in build_conditions
+    criterion = self.dict_query(filters=filters, table=table, **kwargs)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/database/query.py", line 328, in dict_query
+    _operator = self.OPERATOR_MAP["="]
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/database/query.py", line 194, in OPERATOR_MAP
+    if frappe.get_hooks("filters_config"):
+  File "/home/jon/frappe-bench/apps/frappe/frappe/__init__.py", line 1488, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "/home/jon/frappe-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "/home/jon/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/__init__.py", line 1453, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(sort=True)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/__init__.py", line 1420, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "/home/jon/frappe-bench/apps/frappe/frappe/database/database.py", line 930, in get_global
+    return self.get_default(key, user)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/database/database.py", line 934, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/database/database.py", line 950, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/defaults.py", line 219, in get_defaults_for
+    frappe.qb.from_(table)
+  File "/home/jon/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/jon/frappe-bench/apps/frappe/frappe/database/database.py", line 227, in sql
+    traceback.print_stack()
+Error in query:
+('SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`=%(param1)s ORDER BY `creation`', {'param1': '__global'})
+Backup failed for Site library.test. Database or site_config.json may be corrupted
+Traceback (most recent call last):
+  File "apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: -198729021804601854
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 685, in backup
+    odb = scheduled_backup(
+  File "apps/frappe/frappe/utils/backups.py", line 529, in scheduled_backup
+    odb = new_backup(
+  File "apps/frappe/frappe/utils/backups.py", line 581, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+  File "apps/frappe/frappe/utils/backups.py", line 187, in get_backup
+    self.set_backup_file_name()
+  File "apps/frappe/frappe/utils/backups.py", line 207, in set_backup_file_name
+    enc = "-enc" if frappe.get_system_settings("encrypt_backup") else ""
+  File "apps/frappe/frappe/__init__.py", line 2293, in get_system_settings
+    local.system_settings = db.get_singles_dict("System Settings", cast=True)
+  File "apps/frappe/frappe/database/database.py", line 665, in get_singles_dict
+    queried_result = frappe.qb.engine.get_query(
+  File "apps/frappe/frappe/database/query.py", line 513, in get_query
+    criterion = self.build_conditions(table, filters, **kwargs)
+  File "apps/frappe/frappe/database/query.py", line 369, in build_conditions
+    criterion = self.dict_query(filters=filters, table=table, **kwargs)
+  File "apps/frappe/frappe/database/query.py", line 328, in dict_query
+    _operator = self.OPERATOR_MAP["="]
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "apps/frappe/frappe/database/query.py", line 194, in OPERATOR_MAP
+    if frappe.get_hooks("filters_config"):
+  File "apps/frappe/frappe/__init__.py", line 1488, in get_hooks
+    hooks = _dict(cache().get_value("app_hooks", _load_app_hooks))
+  File "apps/frappe/frappe/utils/redis_wrapper.py", line 81, in get_value
+    val = generator()
+  File "apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "apps/frappe/frappe/__init__.py", line 1453, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(sort=True)
+  File "apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "apps/frappe/frappe/__init__.py", line 1420, in get_installed_apps
+    installed = json.loads(db.get_global("installed_apps") or "[]")
+  File "apps/frappe/frappe/database/database.py", line 930, in get_global
+    return self.get_default(key, user)
+  File "apps/frappe/frappe/database/database.py", line 934, in get_default
+    d = self.get_defaults(key, parent)
+  File "apps/frappe/frappe/database/database.py", line 950, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "apps/frappe/frappe/defaults.py", line 219, in get_defaults_for
+    frappe.qb.from_(table)
+  File "apps/frappe/frappe/query_builder/utils.py", line 76, in execute_query
+    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "apps/frappe/frappe/database/database.py", line 209, in sql
+    self._cursor.execute(query, values)
+  File "env/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "env/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "env/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table '_383c1b0e96d4d397.tabDefaultValue' doesn't exist")
+
+mysqldump --single-transaction --quick --lock-tables=false -u _383c1b0e96d4d397 -p********** _383c1b0e96d4d397 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./library.test/private/backups/20220813_093003-library_test-database.sql.gz
+
+Backup Summary for library.test at 2022-08-13 09:30:05.973253
+Config  : ./library.test/private/backups/20220813_093003-library_test-site_config_backup.json 94.0B
+Database: ./library.test/private/backups/20220813_093003-library_test-database.sql.gz         242.1KiB
+Backup for Site library.test has been successfully completed
+mysqldump --single-transaction --quick --lock-tables=false -u _383c1b0e96d4d397 -p********** _383c1b0e96d4d397 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./library.test/private/backups/20220814_000003-library_test-database.sql.gz
+
+Backup Summary for library.test at 2022-08-14 00:00:04.469852
+Config  : ./library.test/private/backups/20220814_000003-library_test-site_config_backup.json 94.0B
+Database: ./library.test/private/backups/20220814_000003-library_test-database.sql.gz         249.6KiB
+Backup for Site library.test has been successfully completed
+mysqldump --single-transaction --quick --lock-tables=false -u _383c1b0e96d4d397 -p********** _383c1b0e96d4d397 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./library.test/private/backups/20220815_000006-library_test-database.sql.gz
+
+Backup Summary for library.test at 2022-08-15 00:00:06.772372
+Config  : ./library.test/private/backups/20220815_000006-library_test-site_config_backup.json 94.0B
+Database: ./library.test/private/backups/20220815_000006-library_test-database.sql.gz         252.6KiB
+Backup for Site library.test has been successfully completed
+mysqldump --single-transaction --quick --lock-tables=false -u _383c1b0e96d4d397 -p********** _383c1b0e96d4d397 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./library.test/private/backups/20220815_120003-library_test-database.sql.gz
+
+Backup Summary for library.test at 2022-08-15 12:00:04.504774
+Config  : ./library.test/private/backups/20220815_120003-library_test-site_config_backup.json 94.0B
+Database: ./library.test/private/backups/20220815_120003-library_test-database.sql.gz         262.6KiB
+Backup for Site library.test has been successfully completed
+mysqldump --single-transaction --quick --lock-tables=false -u _383c1b0e96d4d397 -p********** _383c1b0e96d4d397 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./library.test/private/backups/20220815_180004-library_test-database.sql.gz
+
+Backup Summary for library.test at 2022-08-15 18:00:05.002919
+Config  : ./library.test/private/backups/20220815_180004-library_test-site_config_backup.json 94.0B
+Database: ./library.test/private/backups/20220815_180004-library_test-database.sql.gz         268.8KiB
+Backup for Site library.test has been successfully completed
+mysqldump --single-transaction --quick --lock-tables=false -u _383c1b0e96d4d397 -p********** _383c1b0e96d4d397 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./library.test/private/backups/20220816_000003-library_test-database.sql.gz
+
+Backup Summary for library.test at 2022-08-16 00:00:04.524016
+Config  : ./library.test/private/backups/20220816_000003-library_test-site_config_backup.json 94.0B
+Database: ./library.test/private/backups/20220816_000003-library_test-database.sql.gz         274.5KiB
+Backup for Site library.test has been successfully completed
+mysqldump --single-transaction --quick --lock-tables=false -u _383c1b0e96d4d397 -p********** _383c1b0e96d4d397 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./library.test/private/backups/20220816_060004-library_test-database.sql.gz
+
+Backup Summary for library.test at 2022-08-16 06:00:06.074821
+Config  : ./library.test/private/backups/20220816_060004-library_test-site_config_backup.json 94.0B
+Database: ./library.test/private/backups/20220816_060004-library_test-database.sql.gz         277.5KiB
+Backup for Site library.test has been successfully completed
+mysqldump --single-transaction --quick --lock-tables=false -u _0b087a51cb6146b9 -p********** _0b087a51cb6146b9 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./abcd.test/private/backups/20220816_153003-abcd_test-database.sql.gz
+
+Backup Summary for abcd.test at 2022-08-16 15:30:04.309917
+Config  : ./abcd.test/private/backups/20220816_153003-abcd_test-site_config_backup.json 94.0B
+Database: ./abcd.test/private/backups/20220816_153003-abcd_test-database.sql.gz         245.2KiB
+Backup for Site abcd.test has been successfully completed
+File ./library.test/private/backups/20220815_120003-library_test-site_config_backup.json is older than 24 hours
+File ./library.test/private/backups/20220816_060004-library_test-database.sql.gz is recent
+File ./library.test/private/backups/20220816_060004-library_test-site_config_backup.json is recent
+File ./library.test/private/backups/20220815_180004-library_test-database.sql.gz is recent
+File ./library.test/private/backups/20220816_000003-library_test-site_config_backup.json is recent
+File ./library.test/private/backups/20220815_180004-library_test-site_config_backup.json is recent
+File ./library.test/private/backups/20220816_000003-library_test-database.sql.gz is recent
+mysqldump --single-transaction --quick --lock-tables=false -u _383c1b0e96d4d397 -p********** _383c1b0e96d4d397 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./library.test/private/backups/20220816_180004-library_test-database.sql.gz
+
+Backup Summary for library.test at 2022-08-16 18:00:05.290227
+Config  : ./library.test/private/backups/20220816_180004-library_test-site_config_backup.json 94.0B
+Database: ./library.test/private/backups/20220816_180004-library_test-database.sql.gz         286.7KiB
+Backup for Site library.test has been successfully completed
+mysqldump --single-transaction --quick --lock-tables=false -u _0b087a51cb6146b9 -p********** _0b087a51cb6146b9 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./abcd.test/private/backups/20220817_120005-abcd_test-database.sql.gz
+
+Backup Summary for abcd.test at 2022-08-17 12:00:06.980309
+Config  : ./abcd.test/private/backups/20220817_120005-abcd_test-site_config_backup.json 94.0B
+Database: ./abcd.test/private/backups/20220817_120005-abcd_test-database.sql.gz         274.3KiB
+Backup for Site abcd.test has been successfully completed
+File ./library.test/private/backups/20220816_060004-library_test-database.sql.gz is older than 24 hours
+File ./library.test/private/backups/20220816_060004-library_test-site_config_backup.json is older than 24 hours
+File ./library.test/private/backups/20220816_180004-library_test-database.sql.gz is recent
+File ./library.test/private/backups/20220816_000003-library_test-site_config_backup.json is older than 24 hours
+File ./library.test/private/backups/20220815_180004-library_test-site_config_backup.json is older than 24 hours
+File ./library.test/private/backups/20220816_180004-library_test-site_config_backup.json is recent
+File ./library.test/private/backups/20220816_000003-library_test-database.sql.gz is older than 24 hours
+mysqldump --single-transaction --quick --lock-tables=false -u _383c1b0e96d4d397 -p********** _383c1b0e96d4d397 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./library.test/private/backups/20220817_120007-library_test-database.sql.gz
+
+Backup Summary for library.test at 2022-08-17 12:00:08.375996
+Config  : ./library.test/private/backups/20220817_120007-library_test-site_config_backup.json 94.0B
+Database: ./library.test/private/backups/20220817_120007-library_test-database.sql.gz         289.6KiB
+Backup for Site library.test has been successfully completed
+mysqldump --single-transaction --quick --lock-tables=false -u _0b087a51cb6146b9 -p********** _0b087a51cb6146b9 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./abcd.test/private/backups/20220817_180004-abcd_test-database.sql.gz
+
+Backup Summary for abcd.test at 2022-08-17 18:00:05.909590
+Config  : ./abcd.test/private/backups/20220817_180004-abcd_test-site_config_backup.json 94.0B
+Database: ./abcd.test/private/backups/20220817_180004-abcd_test-database.sql.gz         288.1KiB
+Backup for Site abcd.test has been successfully completed
+File ./library.test/private/backups/20220816_180004-library_test-database.sql.gz is older than 24 hours
+File ./library.test/private/backups/20220817_120007-library_test-site_config_backup.json is recent
+File ./library.test/private/backups/20220817_120007-library_test-database.sql.gz is recent
+File ./library.test/private/backups/20220816_180004-library_test-site_config_backup.json is older than 24 hours
+mysqldump --single-transaction --quick --lock-tables=false -u _383c1b0e96d4d397 -p********** _383c1b0e96d4d397 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./library.test/private/backups/20220817_180005-library_test-database.sql.gz
+
+Backup Summary for library.test at 2022-08-17 18:00:07.199284
+Config  : ./library.test/private/backups/20220817_180005-library_test-site_config_backup.json 94.0B
+Database: ./library.test/private/backups/20220817_180005-library_test-database.sql.gz         292.4KiB
+Backup for Site library.test has been successfully completed
+mysqldump --single-transaction --quick --lock-tables=false -u _0b087a51cb6146b9 -p********** _0b087a51cb6146b9 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./abcd.test/private/backups/20220818_000005-abcd_test-database.sql.gz
+
+Backup Summary for abcd.test at 2022-08-18 00:00:08.487659
+Config  : ./abcd.test/private/backups/20220818_000005-abcd_test-site_config_backup.json 94.0B
+Database: ./abcd.test/private/backups/20220818_000005-abcd_test-database.sql.gz         305.6KiB
+Backup for Site abcd.test has been successfully completed
+File ./library.test/private/backups/20220817_180005-library_test-database.sql.gz is recent
+File ./library.test/private/backups/20220817_180005-library_test-site_config_backup.json is recent
+File ./library.test/private/backups/20220817_120007-library_test-site_config_backup.json is recent
+File ./library.test/private/backups/20220817_120007-library_test-database.sql.gz is recent
+mysqldump --single-transaction --quick --lock-tables=false -u _383c1b0e96d4d397 -p********** _383c1b0e96d4d397 -h 127.0.0.1 -P 3306   | /usr/bin/gzip >> ./library.test/private/backups/20220818_000008-library_test-database.sql.gz
+
+Backup Summary for library.test at 2022-08-18 00:00:11.984899
+Config  : ./library.test/private/backups/20220818_000008-library_test-site_config_backup.json 94.0B
+Database: ./library.test/private/backups/20220818_000008-library_test-database.sql.gz         295.1KiB
+Backup for Site library.test has been successfully completed

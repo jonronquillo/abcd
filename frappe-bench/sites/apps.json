@@ -1,0 +1,29 @@
+{
+    "frappe": {
+        "resolution": {
+            "commit_hash": null,
+            "branch": null
+        },
+        "required": [],
+        "idx": 1,
+        "version": "14.0.0-dev"
+    },
+    "library_management": {
+        "resolution": {
+            "commit_hash": "bf989e1a998587ea280296b562fadf220a94912f",
+            "branch": "master"
+        },
+        "required": [],
+        "idx": 2,
+        "version": "0.0.1"
+    },
+    "abcd_translator": {
+        "resolution": {
+            "commit_hash": "d8a613f29058f6165e64f159c14d7023ca060352",
+            "branch": "master"
+        },
+        "required": [],
+        "idx": 3,
+        "version": "0.0.1"
+    }
+}

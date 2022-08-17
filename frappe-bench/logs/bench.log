@@ -1,0 +1,253 @@
+2022-08-11 17:30:49,330 DEBUG cd frappe-bench && python3 -m venv env
+2022-08-11 17:30:53,127 DEBUG cd frappe-bench && /home/jon/frappe-bench/env/bin/python -m pip install --quiet --upgrade pip
+2022-08-11 17:30:55,445 LOG Getting frappe
+2022-08-11 17:30:55,445 DEBUG cd frappe-bench/apps && git clone https://github.com/frappe/frappe.git  --depth 1 --origin upstream
+2022-08-11 17:31:03,589 LOG Installing frappe
+2022-08-11 17:31:03,589 DEBUG cd /home/jon/frappe-bench && /home/jon/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/jon/frappe-bench/apps/frappe 
+2022-08-11 17:32:06,849 DEBUG cd /home/jon/frappe-bench/apps/frappe && yarn install
+2022-08-11 17:33:11,470 DEBUG cd frappe-bench && bench build
+2022-08-11 17:33:14,038 INFO /usr/local/bin/bench build
+2022-08-11 17:34:34,839 LOG setting up backups
+2022-08-11 17:34:35,494 LOG backups were set up
+2022-08-11 17:34:35,504 INFO Bench frappe-bench initialized
+2022-08-11 17:45:41,552 INFO /usr/local/bin/bench start
+2022-08-11 17:45:43,993 INFO /usr/local/bin/bench watch
+2022-08-11 17:45:44,005 INFO /usr/local/bin/bench schedule
+2022-08-11 17:45:44,016 INFO /usr/local/bin/bench serve --port 8000
+2022-08-11 17:45:44,025 INFO /usr/local/bin/bench worker --queue short
+2022-08-11 17:45:44,052 INFO /usr/local/bin/bench worker --queue default
+2022-08-11 17:45:44,068 INFO /usr/local/bin/bench worker --queue long
+2022-08-11 17:48:54,677 INFO /usr/local/bin/bench find
+2022-08-11 18:00:01,676 INFO /usr/local/bin/bench --verbose --site all backup
+2022-08-11 19:08:31,361 INFO /usr/local/bin/bench new-app library_management
+2022-08-11 19:08:31,366 LOG creating new app library_management
+2022-08-11 19:09:54,090 LOG Installing library_management
+2022-08-11 19:09:54,091 DEBUG cd /home/jon/frappe-bench && /home/jon/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/jon/frappe-bench/apps/library_management 
+2022-08-11 19:09:57,715 DEBUG bench build --app library_management
+2022-08-11 19:09:57,878 INFO /usr/local/bin/bench build --app library_management
+2022-08-11 19:14:34,750 INFO /usr/local/bin/bench new-site library.test
+2022-08-11 19:27:53,530 INFO /usr/local/bin/bench new-site library.test
+2022-08-11 19:28:17,271 INFO /usr/local/bin/bench --help
+2022-08-11 19:33:04,915 INFO /usr/local/bin/bench drop-site library.test
+2022-08-11 19:33:47,043 INFO /usr/local/bin/bench drop-site library.test --force
+2022-08-12 12:21:41,593 INFO /home/jon/.local/bin/bench start
+2022-08-12 12:21:43,112 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-12 12:21:43,188 INFO /home/jon/.local/bin/bench watch
+2022-08-12 12:21:43,198 INFO /home/jon/.local/bin/bench schedule
+2022-08-12 12:21:43,224 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-12 12:21:43,233 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-12 12:21:43,235 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-12 12:26:27,490 INFO /home/jon/.local/bin/bench
+2022-08-12 12:26:54,001 INFO /home/jon/.local/bin/bench drop-site library.test
+2022-08-12 12:27:34,342 INFO /home/jon/.local/bin/bench drop-site library.test --force
+2022-08-12 19:24:18,394 INFO /home/jon/.local/bin/bench drop-site library.test
+2022-08-12 19:25:03,659 INFO /usr/local/bin/bench drop-site library.test --force
+2022-08-12 23:19:24,865 INFO /usr/local/bin/bench drop-site library.test --force
+2022-08-12 23:21:15,389 INFO /home/jon/.local/bin/bench start
+2022-08-12 23:21:16,880 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-12 23:21:16,977 INFO /home/jon/.local/bin/bench schedule
+2022-08-12 23:21:16,995 INFO /home/jon/.local/bin/bench watch
+2022-08-12 23:21:17,027 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-12 23:21:17,055 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-12 23:21:17,098 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-12 23:22:26,672 INFO /home/jon/.local/bin/bench new-site library.test
+2022-08-13 00:00:02,174 INFO /usr/local/bin/bench --verbose --site all backup
+2022-08-13 01:06:09,712 INFO /home/jon/.local/bin/bench new-site library.test
+2022-08-13 01:06:25,780 INFO /home/jon/.local/bin/bench drop-site library.test --force
+2022-08-13 01:06:42,998 INFO /home/jon/.local/bin/bench new-site library.test
+2022-08-13 01:13:05,687 INFO /home/jon/.local/bin/bench start
+2022-08-13 01:13:07,103 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-13 01:13:07,195 INFO /home/jon/.local/bin/bench schedule
+2022-08-13 01:13:07,211 INFO /home/jon/.local/bin/bench watch
+2022-08-13 01:13:07,293 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-13 01:13:07,312 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-13 01:13:07,348 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-13 10:42:56,215 INFO /home/jon/.local/bin/bench start
+2022-08-13 10:42:57,688 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-13 10:42:57,747 INFO /home/jon/.local/bin/bench watch
+2022-08-13 10:42:57,758 INFO /home/jon/.local/bin/bench schedule
+2022-08-13 10:42:57,847 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-13 10:42:57,881 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-13 10:42:57,884 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-13 12:00:01,594 INFO /usr/local/bin/bench --verbose --site all backup
+2022-08-13 22:47:43,833 INFO /home/jon/.local/bin/bench start
+2022-08-13 22:47:45,360 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-13 22:47:45,446 INFO /home/jon/.local/bin/bench watch
+2022-08-13 22:47:45,464 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-13 22:47:45,491 INFO /home/jon/.local/bin/bench schedule
+2022-08-13 22:47:45,570 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-13 22:47:45,574 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-13 22:50:36,115 INFO /home/jon/.local/bin/bench --site library.test add-to-hosts
+2022-08-13 22:54:24,525 INFO /home/jon/.local/bin/bench --site library.test install-app library_management
+2022-08-13 22:55:35,373 INFO /home/jon/.local/bin/bench --site library.test list-apps
+2022-08-14 00:00:01,784 INFO /usr/local/bin/bench --verbose --site all backup
+2022-08-14 23:54:01,971 INFO /home/jon/.local/bin/bench set-config -g developer_mode true
+2022-08-14 23:54:09,628 INFO /home/jon/.local/bin/bench start
+2022-08-14 23:54:11,714 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-14 23:54:11,769 INFO /home/jon/.local/bin/bench watch
+2022-08-14 23:54:11,807 INFO /home/jon/.local/bin/bench schedule
+2022-08-14 23:54:11,851 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-14 23:54:11,869 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-14 23:54:11,876 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-15 00:00:02,493 INFO /usr/local/bin/bench --verbose --site all backup
+2022-08-15 01:02:23,174 INFO /home/jon/.local/bin/bench --site library.test mariadb
+2022-08-15 12:00:01,815 INFO /usr/local/bin/bench --verbose --site all backup
+2022-08-15 18:00:02,096 INFO /usr/local/bin/bench --verbose --site all backup
+2022-08-16 00:00:01,786 INFO /usr/local/bin/bench --verbose --site all backup
+2022-08-16 06:00:02,022 INFO /usr/local/bin/bench --verbose --site all backup
+2022-08-16 17:48:43,875 INFO /home/jon/.local/bin/bench new-app abcd_translator
+2022-08-16 17:48:43,943 LOG creating new app abcd_translator
+2022-08-16 17:50:23,413 LOG Installing abcd_translator
+2022-08-16 17:50:23,413 DEBUG cd /home/jon/frappe-bench && /home/jon/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/jon/frappe-bench/apps/abcd_translator 
+2022-08-16 17:50:30,004 DEBUG bench build --app abcd_translator
+2022-08-16 17:50:30,188 INFO /home/jon/.local/bin/bench build --app abcd_translator
+2022-08-16 17:53:44,688 INFO /home/jon/.local/bin/bench new-site abcd.test
+2022-08-16 17:59:22,094 INFO /home/jon/.local/bin/bench --site abcd.test add-to-hosts
+2022-08-16 18:00:01,610 INFO /usr/local/bin/bench --verbose --site all backup
+2022-08-16 18:02:08,594 INFO /home/jon/.local/bin/bench --site abcd.test install-app abcd_translator
+2022-08-16 18:02:23,285 INFO /home/jon/.local/bin/bench --site list-app
+2022-08-16 18:02:36,479 INFO /home/jon/.local/bin/bench --site abcd.test list-app
+2022-08-16 18:03:22,943 INFO /home/jon/.local/bin/bench --site abcd.test list-apps
+2022-08-16 18:04:08,659 INFO /home/jon/.local/bin/bench start
+2022-08-16 18:04:12,229 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-16 18:04:12,306 INFO /home/jon/.local/bin/bench watch
+2022-08-16 18:04:12,339 INFO /home/jon/.local/bin/bench schedule
+2022-08-16 18:04:12,392 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-16 18:04:12,406 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-16 18:04:12,430 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 10:41:12,836 INFO /home/jon/.local/bin/bench start
+2022-08-17 10:41:14,757 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 10:41:14,788 INFO /home/jon/.local/bin/bench watch
+2022-08-17 10:41:14,820 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 10:41:14,869 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 10:41:14,904 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 10:41:14,907 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 11:05:50,177 INFO /home/jon/.local/bin/bench start
+2022-08-17 11:05:51,777 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 11:05:51,836 INFO /home/jon/.local/bin/bench watch
+2022-08-17 11:05:51,855 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 11:05:51,908 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 11:05:51,918 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 11:05:51,949 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 11:47:07,456 INFO /home/jon/.local/bin/bench start
+2022-08-17 11:47:09,133 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 11:47:09,213 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 11:47:09,246 INFO /home/jon/.local/bin/bench watch
+2022-08-17 11:47:09,274 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 11:47:09,287 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 11:47:09,317 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 11:47:18,218 INFO /home/jon/.local/bin/bench start
+2022-08-17 11:47:20,150 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 11:47:20,175 INFO /home/jon/.local/bin/bench watch
+2022-08-17 11:47:20,250 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 11:47:20,265 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 11:47:20,288 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 11:47:20,309 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 11:56:03,388 INFO /home/jon/.local/bin/bench start
+2022-08-17 11:56:04,970 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 11:56:05,018 INFO /home/jon/.local/bin/bench watch
+2022-08-17 11:56:05,062 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 11:56:05,092 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 11:56:05,110 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 11:56:05,133 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 12:00:01,295 INFO /usr/local/bin/bench --verbose --site all backup
+2022-08-17 12:04:26,504 INFO /home/jon/.local/bin/bench start
+2022-08-17 12:04:28,005 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 12:04:28,093 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 12:04:28,114 INFO /home/jon/.local/bin/bench watch
+2022-08-17 12:04:28,147 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 12:04:28,177 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 12:04:28,196 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 12:08:25,988 INFO /home/jon/.local/bin/bench start
+2022-08-17 12:08:27,768 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 12:08:27,772 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 12:08:27,787 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 12:08:27,800 INFO /home/jon/.local/bin/bench watch
+2022-08-17 12:08:27,833 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 12:08:27,881 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 12:14:25,550 INFO /home/jon/.local/bin/bench start
+2022-08-17 12:14:27,137 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 12:14:27,182 INFO /home/jon/.local/bin/bench watch
+2022-08-17 12:14:27,254 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 12:14:27,310 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 12:14:27,335 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 12:14:27,377 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 15:54:12,033 INFO /home/jon/.local/bin/bench start
+2022-08-17 15:54:13,972 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 15:54:14,097 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 15:54:14,099 INFO /home/jon/.local/bin/bench watch
+2022-08-17 15:54:14,121 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 15:54:14,203 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 15:54:14,232 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 15:59:05,042 INFO /home/jon/.local/bin/bench start
+2022-08-17 15:59:06,673 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 15:59:06,751 INFO /home/jon/.local/bin/bench watch
+2022-08-17 15:59:06,776 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 15:59:06,792 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 15:59:06,863 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 15:59:06,871 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 16:24:22,172 INFO /home/jon/.local/bin/bench mariadb
+2022-08-17 16:25:01,502 INFO /home/jon/.local/bin/bench --site abcd.test mariadb
+2022-08-17 16:34:14,700 INFO /home/jon/.local/bin/bench --site abcd.test mariadb
+2022-08-17 16:43:20,985 INFO /home/jon/.local/bin/bench --abcd.test console
+2022-08-17 16:43:32,386 INFO /home/jon/.local/bin/bench console
+2022-08-17 16:43:59,815 INFO /home/jon/.local/bin/bench console --site abcd.test
+2022-08-17 16:44:27,523 INFO /home/jon/.local/bin/bench --help
+2022-08-17 16:45:06,901 INFO /home/jon/.local/bin/bench console [options]
+2022-08-17 16:45:22,456 INFO /home/jon/.local/bin/bench console [OPTIONS]
+2022-08-17 16:45:40,544 INFO /home/jon/.local/bin/bench console --help
+2022-08-17 16:51:20,205 INFO /home/jon/.local/bin/bench start
+2022-08-17 16:51:21,954 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 16:51:21,968 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 16:51:22,033 INFO /home/jon/.local/bin/bench watch
+2022-08-17 16:51:22,055 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 16:51:22,065 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 16:51:22,075 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 17:11:45,416 INFO /home/jon/.local/bin/bench start
+2022-08-17 17:11:47,269 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 17:11:47,306 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 17:11:47,352 INFO /home/jon/.local/bin/bench watch
+2022-08-17 17:11:47,420 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 17:11:47,443 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 17:11:47,449 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 17:30:09,595 INFO /home/jon/.local/bin/bench --site bacd.test mariadb
+2022-08-17 17:30:20,885 INFO /home/jon/.local/bin/bench --site abcd.test mariadb
+2022-08-17 17:36:42,122 INFO /home/jon/.local/bin/bench start
+2022-08-17 17:36:43,681 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 17:36:43,760 INFO /home/jon/.local/bin/bench watch
+2022-08-17 17:36:43,769 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 17:36:43,840 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 17:36:43,878 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 17:36:43,929 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 17:49:57,230 INFO /home/jon/.local/bin/bench --site abcd.test mariadb
+2022-08-17 17:51:28,472 INFO /home/jon/.local/bin/bench start
+2022-08-17 17:51:30,316 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 17:51:30,478 INFO /home/jon/.local/bin/bench watch
+2022-08-17 17:51:30,575 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 17:51:30,590 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 17:51:30,620 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 17:51:30,642 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-17 18:00:02,064 INFO /usr/local/bin/bench --verbose --site all backup
+2022-08-17 19:23:24,233 INFO /home/jon/.local/bin/bench --site abcd.test mariadb
+2022-08-17 21:12:10,094 INFO /home/jon/.local/bin/bench start
+2022-08-17 21:12:11,923 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-17 21:12:12,031 INFO /home/jon/.local/bin/bench watch
+2022-08-17 21:12:12,037 INFO /home/jon/.local/bin/bench schedule
+2022-08-17 21:12:12,068 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-17 21:12:12,092 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-17 21:12:12,116 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-18 00:00:02,204 INFO /usr/local/bin/bench --verbose --site all backup
+2022-08-18 00:01:15,891 INFO /home/jon/.local/bin/bench start
+2022-08-18 00:01:17,709 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-18 00:01:17,880 INFO /home/jon/.local/bin/bench watch
+2022-08-18 00:01:17,943 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-18 00:01:17,952 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-18 00:01:17,960 INFO /home/jon/.local/bin/bench schedule
+2022-08-18 00:01:17,994 INFO /home/jon/.local/bin/bench worker --queue default
+2022-08-18 01:21:40,526 INFO /home/jon/.local/bin/bench start
+2022-08-18 01:21:42,062 INFO /home/jon/.local/bin/bench serve --port 8000
+2022-08-18 01:21:42,146 INFO /home/jon/.local/bin/bench watch
+2022-08-18 01:21:42,179 INFO /home/jon/.local/bin/bench worker --queue short
+2022-08-18 01:21:42,188 INFO /home/jon/.local/bin/bench schedule
+2022-08-18 01:21:42,272 INFO /home/jon/.local/bin/bench worker --queue long
+2022-08-18 01:21:42,375 INFO /home/jon/.local/bin/bench worker --queue default
