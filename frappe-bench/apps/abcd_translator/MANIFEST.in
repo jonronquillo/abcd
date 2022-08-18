@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include abcd_translator *.css
+recursive-include abcd_translator *.csv
+recursive-include abcd_translator *.html
+recursive-include abcd_translator *.ico
+recursive-include abcd_translator *.js
+recursive-include abcd_translator *.json
+recursive-include abcd_translator *.md
+recursive-include abcd_translator *.png
+recursive-include abcd_translator *.py
+recursive-include abcd_translator *.svg
+recursive-include abcd_translator *.txt
+recursive-exclude abcd_translator *.pyc
